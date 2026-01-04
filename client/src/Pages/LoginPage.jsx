@@ -1,32 +1,61 @@
-import React from 'react'
+import React , {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+//import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import axios from 'axios'
 
 export default function LoginPage() {
+    const[formData, setFormData] = useState({
+        user_name: "",
+        user_password:""
+    })
+
+    function handleChange(event){
+        const {name, value} = event.target
+        setFormData({...formData, [name]:value})
+    }
+
+    function handleClick(event){
+        console.log("clicked ...")
+        console.log(formData)
+        try {
+           axios.post ("http://localhost:4000/users/", {
+            user_name: formData.user_name,
+            user_password: formData.user_password
+           })
+        }
+        catch(error) {
+            console.log (error)
+        } 
+    }
+
   return (
-    <Form noValidate >
+    <Form >
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Group as={Col} md="4" >
           <Form.Control
             required
             type="text"
             placeholder="User Name"
+            name="user_name"
+            onChange={(event)=>handleChange(event)}
           />
         </Form.Group>
       </Row>
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Group as={Col} md="4" >
           <Form.Control
             required
             type="text"
             placeholder="Password"
+            name="user_password"
+            onChange={(event)=>handleChange(event)}
           />
         </Form.Group>
       </Row>
-      <Button type="submit">Submit form</Button>
+      <Button type="button" onClick={(event)=>handleClick(event)}>Submit form</Button>
     </Form>
   )
 }
