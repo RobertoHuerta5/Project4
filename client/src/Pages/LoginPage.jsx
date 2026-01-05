@@ -17,14 +17,13 @@ export default function LoginPage() {
         setFormData({...formData, [name]:value})
     }
 
-    function handleClick(event){
+    async function handleClick(event){
         console.log("clicked ...")
         console.log(formData)
         try {
-           axios.post ("http://localhost:4000/users/", {
-            user_name: formData.user_name,
-            user_password: formData.user_password
-           })
+            console.log (formData.user_name)
+           const response = await axios.post ("http://localhost:4000/users/", {user_name:formData.user_name, user_password:formData.user_password})
+           console.log(response)
         }
         catch(error) {
             console.log (error)

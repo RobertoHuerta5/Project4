@@ -12,7 +12,7 @@ db.connect ((error)=> {
       console.log ("Error on DB connect:", error)
       return;
     } 
-      console.log ("Connected to School DB")
+      console.log ("Connected to AutoIQ DB")
   })
   
   export default db;
