@@ -2,7 +2,6 @@ import React , {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-//import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import axios from 'axios'
 
@@ -54,7 +53,7 @@ export default function LoginPage() {
           />
         </Form.Group>
       </Row>
-      <Button type="button" onClick={(event)=>handleClick(event)}>Submit form</Button>
+      <Button type="button" onClick={(event)=>handleClick(event)}>Log In</Button>
     </Form>
   )
 }

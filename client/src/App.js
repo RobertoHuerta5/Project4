@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import HomePage from './Pages/HomePage';
 import LoginPage from './Pages/LoginPage';
 import NavBar from './components/NavBar';
+import SignUpPage from './Pages/SignUpPage';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
