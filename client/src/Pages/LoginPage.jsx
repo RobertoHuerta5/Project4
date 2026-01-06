@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 import axios from 'axios'
 
 export default function LoginPage() {
@@ -30,30 +31,35 @@ export default function LoginPage() {
     }
 
   return (
-    <Form >
-      <Row className="mb-3">
-        <Form.Group as={Col} md="4" >
-          <Form.Control
-            required
-            type="text"
-            placeholder="User Name"
-            name="user_name"
-            onChange={(event)=>handleChange(event)}
-          />
-        </Form.Group>
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+          <Col md={6} lg={4}>
+                 <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>User Name</Form.Label>
+                        <Form.Control 
+                          required
+                          type="text"
+                          placeholder="User Name"
+                          name="user_name"
+                          onChange={(event)=>handleChange(event)}/>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control 
+                            required
+                            type="text"
+                            placeholder="Password"
+                            name="user_password"
+                            onChange={(event)=>handleChange(event)}/>
+                    </Form.Group>
+                    <Button variant="primary" type="button" onClick={(event)=>handleClick(event)}>Log In</Button>
+                </Form>
+          </Col>
       </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="4" >
-          <Form.Control
-            required
-            type="text"
-            placeholder="Password"
-            name="user_password"
-            onChange={(event)=>handleChange(event)}
-          />
-        </Form.Group>
-      </Row>
-      <Button type="button" onClick={(event)=>handleClick(event)}>Log In</Button>
-    </Form>
+  </Container>
+
   )
 }
+

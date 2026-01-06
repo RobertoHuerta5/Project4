@@ -10,7 +10,8 @@ export default function NavBar() {
         <Navbar.Collapse>
             <Nav>
             <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/login">Log In</Nav.Link>
+            <Nav.Link href="/signup">Sign Up</Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>
