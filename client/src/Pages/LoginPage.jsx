@@ -32,7 +32,10 @@ export default function LoginPage() {
 
   return (
     <>
-      <h2 className="text-center mb-4">Log In</h2>
+      <div className="text-center mb-4">
+        <h2 className="fw-bold">Log In</h2>
+        <p className="text-muted">Sign in to continue</p>
+      </div>  
         <Container className="mt-5">
           <Row className="justify-content-center">
               <Col md={6} lg={4}>
