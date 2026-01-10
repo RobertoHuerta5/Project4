@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 
 export default function AddUserComp() {
     const [formData, setFormData] = useState ({
-        student_name: "", 
-        student_email: ""
+        user_name: "",
+        user_password:"",
+        user_email: ""
     })
 
     function handleChange (event) {
