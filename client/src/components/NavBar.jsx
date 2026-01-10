@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/esm/Button';
 
 export default function NavBar() {
   return (
@@ -13,6 +14,7 @@ export default function NavBar() {
             <Nav.Link href="/login">Log In</Nav.Link>
             <Nav.Link href="/signup">Sign Up</Nav.Link>
             </Nav>
+            <Button className="ms-auto" variant="outline-danger" size="sm">Logout</Button>
         </Navbar.Collapse>
     </Navbar>
     )
