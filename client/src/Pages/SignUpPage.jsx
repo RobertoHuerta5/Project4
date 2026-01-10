@@ -24,7 +24,7 @@ export default function SignUpPage() {
         <Container className="mt-5">
             <Row className="justify-content-center">
                 <Col md={6} lg={4}>
-                        <Form>
+                    <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>User Name</Form.Label>
                             <Form.Control type="text" placeholder="User Name" />
@@ -32,14 +32,15 @@ export default function SignUpPage() {
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Email Address</Form.Label>
-                            <Form.Control type="text" placeholder="Email Address" />
+                             <Form.Control type="text" placeholder="Email Address" />
                         </Form.Group>
+                        
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="text" placeholder="Password" />
+                             <Form.Control type="text" placeholder="Password" />
                         </Form.Group>
                         <Button variant="primary" type="submit">Submit</Button>
-                        </Form>
+                     </Form>
                 </Col>
             </Row>
         </Container>
