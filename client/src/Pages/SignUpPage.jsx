@@ -18,6 +18,11 @@ export default function SignUpPage() {
             setFormData ({...formData, [name]:value})
         }
 
+        function handleClick(event){
+            event.preventDefault()
+            
+        }
+
   return (
     <>
         <h2 className="text-center mb-4">Sign Up</h2>
@@ -27,19 +32,22 @@ export default function SignUpPage() {
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>User Name</Form.Label>
-                            <Form.Control type="text" placeholder="User Name" />
+                            <Form.Control type="text" placeholder="User Name" name="user_name"
+                              onChange={(event)=>handleChange(event)}/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Email Address</Form.Label>
-                             <Form.Control type="text" placeholder="Email Address" />
+                             <Form.Control type="text" placeholder="Email Address" name="user_email"
+                              onChange={(event)=>handleChange(event)} />
                         </Form.Group>
                         
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                             <Form.Control type="text" placeholder="Password" />
+                             <Form.Control type="text" placeholder="Password"name="user_password"
+                              onChange={(event)=>handleChange(event)}/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">Submit</Button>
+                        <Button variant="primary" type="submit" onClick={handleClick}>Submit</Button>
                      </Form>
                 </Col>
             </Row>

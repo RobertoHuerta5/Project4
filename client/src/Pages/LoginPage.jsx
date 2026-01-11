@@ -12,21 +12,25 @@ export default function LoginPage() {
         user_password:""
     })
 
+    const[errorMessage, setErrorMessage]= useState("")
+
     function handleChange(event){
         const {name, value} = event.target
         setFormData({...formData, [name]:value})
     }
 
     async function handleClick(event){
-        console.log("clicked ...")
-        console.log(formData)
+        setErrorMessage("")
         try {
-            console.log (formData.user_name)
-           const response = await axios.post ("http://localhost:4000/users/", {user_name:formData.user_name, user_password:formData.user_password})
-           console.log(response)
+           const result = await axios.post ("http://localhost:4000/users/", {user_name:formData.user_name, user_password:formData.user_password})
+           console.log(result.data)
         }
         catch(error) {
-            console.log (error)
+          if (error.response) {
+            setErrorMessage(error.response.data.message);
+        } else {
+            setErrorMessage("Server not responding");
+        }
         } 
     }
 
@@ -60,6 +64,7 @@ export default function LoginPage() {
                                 onChange={(event)=>handleChange(event)}/>
                         </Form.Group>
                         <Button variant="primary" type="button" onClick={(event)=>handleClick(event)}>Log In</Button>
+                        {errorMessage && (<p style={{ color: "red" }}>{errorMessage}</p>)}
                     </Form>
               </Col>
           </Row>
