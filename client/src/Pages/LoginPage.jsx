@@ -44,7 +44,7 @@ export default function LoginPage() {
           <Row className="justify-content-center">
               <Col md={6} lg={4}>
                     <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" controlId="formBasicUserName">
                             <Form.Label>User Name</Form.Label>
                             <Form.Control 
                               required

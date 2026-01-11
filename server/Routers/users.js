@@ -4,8 +4,8 @@ import db from '../dbConnections.js'
 const Router = express.Router()
 
 Router.post ('/', async (req,res)=>{
+    const {user_name, user_password} = req.body
     try {
-        const {user_name, user_password} = req.body
         console.log(user_name, user_password)
         const [result] = await db.query ("SELECT * FROM users WHERE user_name= ? AND user_password= ?", [user_name, user_password])
         if (result.length === 0 )
@@ -16,7 +16,18 @@ Router.post ('/', async (req,res)=>{
     catch (error){
         res.status(500).send("Server error while listing users", error)
     }
-
 })
+
+Router.post ('/signup', async (req,res)=> {
+    const {user_name, user_password} = req.body
+    try{
+        const [result] = await db.query ("INSERT INTO users (user_name, user_password) VALUES (?, ?)",[user_name,user_password])
+        res.status(201).send({ message: "User added successfully"})
+    }
+    catch (error) {
+        console.error("Register user error:", error);
+        res.status(500).send({message: "Server error while adding user"});
+      }
+    })
 
 export default Router;
