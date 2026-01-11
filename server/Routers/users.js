@@ -14,7 +14,7 @@ Router.post ('/', async (req,res)=>{
             res.status(200).json(result[0])
     }
     catch (error){
-        res.status(500).send("Server error while listing users", error)
+        res.status(500).send("Server error while listing user", error)
     }
 })
 
