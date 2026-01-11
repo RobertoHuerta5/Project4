@@ -30,7 +30,8 @@ export default function DashboardPage() {
       <Container className="mt-4">
         <h2 className="mb-3">Categories</h2>
         {categories.map(category =>(
-          <Row key={category.category_id} className="mb-3">
+          <React.Fragment key={category.category_id}>
+          <Row  className="mb-3">
             <Col xs={12}>
               <Card className="shadow-sm">
                 <Card.Body className="d-grid">
@@ -39,6 +40,27 @@ export default function DashboardPage() {
               </Card>
             </Col>
           </Row>
+          {selectedCategory === category.category_id && (
+            <Row className="mb-4">
+              <Col xs={12}>
+                {questions.length === 0 ?(<p className="text-muted ms-3">No Questions.</p>)
+                  :(questions.map(question=>(
+                  <Card key= {question.question_id} className="mb-3 ms-3">
+                    <Card.Body>
+                      <Card.Title>
+                        Q: {question.question_text}
+                      </Card.Title>
+                      <Card.Text>
+                        <strong>A:</strong> {question.answer_text}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                ))
+              )}  
+              </Col>
+            </Row>
+          )}
+          </React.Fragment>
         ))}
       </Container>
     </>

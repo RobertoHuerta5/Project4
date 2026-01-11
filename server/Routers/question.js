@@ -6,7 +6,7 @@ const Router = express.Router()
 Router.get ("/:categoryID", async(req, res)=> {
     try {
       const categoryID = req.params.categoryID
-      const result = await db.query ("SELECT * from questions WHERE category_id = ?", [categoryID] )
+      const result = await db.query ("SELECT * from question WHERE category_id = ?", [categoryID] )
       console.log (result[0])
       res.status(200).send(result[0])
     } catch (error) {
