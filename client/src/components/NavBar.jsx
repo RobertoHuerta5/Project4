@@ -13,6 +13,7 @@ export default function NavBar() {
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/login">Log In</Nav.Link>
             <Nav.Link href="/signup">Sign Up</Nav.Link>
+            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
             </Nav>
             <Button className="ms-auto" variant="outline-danger" size="sm">Logout</Button>
         </Navbar.Collapse>

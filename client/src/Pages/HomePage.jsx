@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
     <Carousel fade>
       <Carousel.Item>
-        <img className="d-block w-100" src="/images/HomePageImage1.jpg" alt="Slide1" />
+        <img className="d-block w-100" src="/images/HomePageImage4.jpeg" alt="Slide1" />
         <Carousel.Caption>
         <h1>AutoIQ</h1>
         <p>Sign in to continue</p>
