@@ -3,6 +3,7 @@ import cors from 'cors'
 import db from './dbConnections.js';
 import usersRouter from './Routers/users.js'
 import categoryRouter from './Routers/category.js'
+import questionRouter from './Routers/question.js'
 
 const app = express();
 
@@ -11,8 +12,9 @@ app.use (cors()) //Allow all origin
 
 app.use('/users', usersRouter)
 app.use('/category', categoryRouter)
+app.use ('/question', questionRouter)
 
-app.get("/", (req,res)=>{
+app.post("/", (req,res)=>{
     res.send ("This Server is running")
 })
 
