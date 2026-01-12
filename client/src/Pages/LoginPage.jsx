@@ -1,9 +1,5 @@
 import React , {useState} from 'react'
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
+import {Button, Col ,Form, Row, Container} from 'react-bootstrap'
 import axios from 'axios'
 
 export default function LoginPage() {

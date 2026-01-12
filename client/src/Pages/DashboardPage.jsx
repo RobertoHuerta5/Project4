@@ -29,20 +29,26 @@ export default function DashboardPage() {
     <>
       <Container className="mt-4">
         <h2 className="mb-3">Categories</h2>
-        {categories.map(category =>(
-          <React.Fragment key={category.category_id}>
-          <Row  className="mb-3">
-            <Col xs={12}>
-              <Card className="shadow-sm">
-                <Card.Body className="d-grid">
-                  <Button variant="primary" size="lg" onClick={()=> loadQuestions(category.category_id)}>{category.category_name}</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+          {categories.map(category =>(
+            <React.Fragment key={category.category_id}>
+              <Row  className="mb-3">
+                <Col xs={12}>
+                  <Card className="shadow-sm">
+                    <Card.Body className="d-grid">
+                      <Button variant="primary" size="lg" onClick={()=> loadQuestions(category.category_id)}>{category.category_name}</Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+          
           {selectedCategory === category.category_id && (
             <Row className="mb-4">
               <Col xs={12}>
+                {category.image_name && (
+                  <Card className="mb-3">
+                    <Card.Img variant="top" src={`/images/${category.image_name}`} alt={category.category_name}/>
+                  </Card>
+                )}
                 {questions.length === 0 ?(<p className="text-muted ms-3">No Questions.</p>)
                   :(questions.map(question=>(
                   <Card key= {question.question_id} className="mb-3 ms-3">
