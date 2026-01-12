@@ -17,6 +17,11 @@ export default function DashboardPage() {
   }, [])
 
   const loadQuestions = (categoryID) =>{
+    if(selectedCategory === categoryID){
+      setSelectedCategory(null)
+      setQuestions([])
+      return
+    }
     setSelectedCategory(categoryID)
     axios.get(`http://localhost:4000/question/${categoryID}`)
       .then(res=> setQuestions(res.data))
