@@ -18,7 +18,7 @@ This is Auto IQ. A simple Q/A web application about cars where users can click o
 - My SQL (Database)
 ## Future Improvements
 - Add more images to match each question
-- Improve transitions
+- Login is required to see Dashboard page
 - Allow users to add new questions and answers
 ## Prerequisites
 - Node.js and npm installed
