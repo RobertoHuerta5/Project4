@@ -15,7 +15,7 @@ export default function NavBar() {
             <Nav.Link href="/signup">Sign Up</Nav.Link>
             <Nav.Link href="/dashboard">Dashboard</Nav.Link>
             </Nav>
-            <Button className="ms-auto" variant="outline-danger" size="sm">Logout</Button>
+            <Button className="ms-auto" variant="outline-danger" size="sm" href="/login">Logout</Button>
         </Navbar.Collapse>
     </Navbar>
     )
