@@ -10,6 +10,8 @@ export default function LoginPage() {
 
     const[errorMessage, setErrorMessage]= useState("")
 
+    const [successMessage, setSuccessMessage] = useState("")
+
     function handleChange(event){
         const {name, value} = event.target
         setFormData({...formData, [name]:value})
@@ -17,9 +19,11 @@ export default function LoginPage() {
 
     async function handleClick(event){
         setErrorMessage("")
+        setSuccessMessage("")
         try {
            const result = await axios.post ("http://localhost:4000/users/", {user_name:formData.user_name, user_password:formData.user_password})
            console.log(result.data)
+           setSuccessMessage("Login successful")
         }
         catch(error) {
           if (error.response) {
@@ -61,6 +65,7 @@ export default function LoginPage() {
                         </Form.Group>
                         <Button variant="primary" type="button" onClick={(event)=>handleClick(event)}>Log In</Button>
                         {errorMessage && (<p style={{ color: "red" }}>{errorMessage}</p>)}
+                        {successMessage && (<p style={{ color: "green" }}>{successMessage}</p>)}
                     </Form>
               </Col>
           </Row>
