@@ -1,8 +1,11 @@
 import React , {useState} from 'react'
 import {Button, Col ,Form, Row, Container} from 'react-bootstrap'
+import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
-export default function LoginPage() {
+export default function LoginPage({setIsLoggedIn}) {
+    const navigate = useNavigate()
+
     const[formData, setFormData] = useState({
         user_name: "",
         user_password:""
@@ -24,6 +27,8 @@ export default function LoginPage() {
            const result = await axios.post ("http://localhost:4000/users/", {user_name:formData.user_name, user_password:formData.user_password})
            console.log(result.data)
            setSuccessMessage("Login successful")
+           setIsLoggedIn(true)
+           navigate("/dashboard")
         }
         catch(error) {
           if (error.response) {
@@ -58,7 +63,7 @@ export default function LoginPage() {
                             <Form.Label>Password</Form.Label>
                             <Form.Control 
                                 required
-                                type="text"
+                                type="password"
                                 placeholder="Password"
                                 name="user_password"
                                 onChange={(event)=>handleChange(event)}/>
