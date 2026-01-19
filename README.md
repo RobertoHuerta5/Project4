@@ -1,6 +1,7 @@
-# Project4
+# AutoIQ
 ## Overview 
-This is Auto IQ. A simple Q/A web application about cars where users can click on specific categories, see questions and answers related to that category.
+A full-stack web application built with React, Node.js, Express, and MySQL that allows users to manage and persist data through a responsive user interface.
+This is Auto IQ. A simple Q/A web application about cars where users can click on specific categories, see questions and answers related to that category. 
 ## User Stories
 - As a user, I want to see images related to each category, so that I can better visualize and understand the car topics.
 - As a user, I want to view questions and detailed answers within a selected category, so that I can better understand essential car knowledge.
